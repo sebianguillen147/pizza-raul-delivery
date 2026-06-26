@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contacta a Pizza Raúl Delivery en Quito - Pedidos, sugerencias y soporte">
+    <meta name="keywords" content="contacto pizza raul, delivery quito, teléfono pizza, whatsapp pizza">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Pizza Raúl Delivery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script>
+    // Menú Hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Cambia el icono entre ☰ y ✕
+        if (navLinks.classList.contains('active')) {
+            hamburger.textContent = '✕';
+        } else {
+            hamburger.textContent = '☰';
+        }
+    });
+
+    // Cierra el menú al hacer clic en un enlace (en móviles)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.textContent = '☰';
+        });
+    });
+</script>
+<body>
+    <header>
+    <nav>
+        <div class="logo">🍕 Pizza Raúl</div>
+        
+        <!-- Menú normal (computadora) -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="landing.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon">🛒 <span id="cart-count" class="cart-count">0</span></a></li>
+        </ul>
+
+        <!-- Botón Hamburguesa -->
+        <button class="hamburger" id="hamburger">☰</button>
+    </nav>
+</header>
+
+    <section style="padding:80px 0;">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px; max-width:1000px; margin:0 auto;">
+                <div>
+                    <h3>Información de Contacto</h3>
+                    <p><strong>Teléfono / WhatsApp:</strong> 099 123 4567</p>
+                    <p><strong>Email:</strong> pedidos@pizzaraul.delivery</p>
+                    <p><strong>Dirección:</strong> Miraflores, Lima, Perú</p>
+                    <p>Horario: Lunes a Domingo 11:00 - 23:00</p>
+                </div>
+
+                <div class="lead-form" style="box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Nombre" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="tel" placeholder="Teléfono" required>
+                        <textarea placeholder="Mensaje o pedido especial" rows="5" style="width:100%; padding:15px; border-radius:8px; border:2px solid #ddd;"></textarea>
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('✅ Mensaje enviado correctamente. Te contactaremos pronto.');
+            this.reset();
+        });
+    </script>
+
+    <footer style="background:#1a1a1a; color:white; text-align:center; padding:40px 20px;">
+        <p>&copy; 2026 Pizza Raúl Delivery</p>
+    </footer>
+</body>
+</html>

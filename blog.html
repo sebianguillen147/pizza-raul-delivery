@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Blog de Pizza Raúl - Recetas, tips y promociones de pizza en Quito">
+    <meta name="keywords" content="blog pizza, recetas pizza, tips delivery quito, pizza raul">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Pizza Raúl Delivery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script>
+    // Menú Hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Cambia el icono entre ☰ y ✕
+        if (navLinks.classList.contains('active')) {
+            hamburger.textContent = '✕';
+        } else {
+            hamburger.textContent = '☰';
+        }
+    });
+
+    // Cierra el menú al hacer clic en un enlace (en móviles)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.textContent = '☰';
+        });
+    });
+</script>
+<body>
+    <header>
+    <nav>
+        <div class="logo">🍕 Pizza Raúl</div>
+        
+        <!-- Menú normal (computadora) -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="landing.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon">🛒 <span id="cart-count" class="cart-count">0</span></a></li>
+        </ul>
+
+        <!-- Botón Hamburguesa -->
+        <button class="hamburger" id="hamburger">☰</button>
+    </nav>
+</header>
+
+    <section>
+        <div class="container">
+            <h2>Blog Pizza Raúl</h2>
+
+            <article style="margin-bottom:50px; border-bottom:1px solid #eee; padding-bottom:40px;">
+                <h3><a href="blog.html#post1">Las 5 mejores pizzas para compartir en familia</a></h3>
+                <p><strong>Publicado: 25 Junio 2026</strong></p>
+                <p>Descubre cuáles son las pizzas más solicitadas para reuniones familiares...</p>
+                <a href="menu.html" style="color:#e63939;">Ver recomendaciones en el Menú →</a>
+            </article>
+
+            <article style="margin-bottom:50px; border-bottom:1px solid #eee; padding-bottom:40px;" id="post1">
+                <h3>Cómo hacer masa de pizza casera perfecta</h3>
+                <p><strong>Publicado: 20 Junio 2026</strong></p>
+                <p>Aprende el secreto de nuestra masa artesanal. Ideal para cuando quieres sorprender en casa.</p>
+                <a href="landing.html" style="color:#e63939;">Suscríbete para más recetas →</a>
+            </article>
+
+            <article style="margin-bottom:50px; border-bottom:1px solid #eee; padding-bottom:40px;">
+                <h3>Consejos para un delivery de pizza rápido y en buen estado</h3>
+                <p><strong>Publicado: 15 Junio 2026</strong></p>
+                <p>Trucos para que tu pizza llegue caliente y deliciosa.</p>
+            </article>
+
+            <article>
+                <h3>Promociones del mes: 2x1 en pizzas medianas</h3>
+                <p><strong>Publicado: 10 Junio 2026</strong></p>
+                <p>No te pierdas nuestras ofertas semanales.</p>
+                <a href="landing.html" style="color:#e63939;">¡Aprovecha ahora!</a>
+            </article>
+        </div>
+    </section>
+
+    <footer style="background:#1a1a1a; color:white; text-align:center; padding:40px 20px;">
+        <p>&copy; 2026 Pizza Raúl Delivery</p>
+    </footer>
+</body>
+</html>

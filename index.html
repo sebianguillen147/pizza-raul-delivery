@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pizza Raúl Delivery - La mejor pizza artesanal de Miraflores con ingredientes frescos y delivery rápido.">
+    <meta name="keywords" content="pizza miraflores, pizza raul, delivery pizza, pedir pizza online, pizzas artesanales">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Raúl Delivery | La Mejor Pizza de Lima</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script>
+    // Menú Hamburguesa
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Cambia el icono entre ☰ y ✕
+        if (navLinks.classList.contains('active')) {
+            hamburger.textContent = '✕';
+        } else {
+            hamburger.textContent = '☰';
+        }
+    });
+
+    // Cierra el menú al hacer clic en un enlace (en móviles)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.textContent = '☰';
+        });
+    });
+</script>
+<body>
+    <header>
+    <nav>
+        <div class="logo">🍕 Pizza Raúl</div>
+        
+        <!-- Menú normal (computadora) -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="landing.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="carrito.html" class="cart-icon">🛒 <span id="cart-count" class="cart-count">0</span></a></li>
+        </ul>
+
+        <!-- Botón Hamburguesa -->
+        <button class="hamburger" id="hamburger">☰</button>
+    </nav>
+</header>
+
+    <!-- HERO - Above the Fold -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>¡La Mejor Pizza de Lima!</h1>
+                <p>Ingredientes frescos • Masa artesanal • Delivery en menos de 45 minutos</p>
+                <div style="margin-top: 35px;">
+                    <a href="menu.html" class="btn btn-primary">Ver Menú Completo</a>
+                    <a href="landing.html" class="btn btn-secondary">¡Obtener 20% OFF!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección breve de promociones -->
+    <section style="background:#f8f9fa; padding:70px 0;">
+        <div class="container">
+            <h2 style="color:#c8102e;">Ofertas Especiales</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; text-align:center;">
+                <div>
+                    <h3>2x1 en Pizzas Medianas</h3>
+                    <p>Todos los martes y miércoles</p>
+                </div>
+                <div>
+                    <h3>Delivery Gratis</h3>
+                    <p>En pedidos mayores a $25</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background:#1a1a1a; color:white; text-align:center; padding:50px 20px;">
+        <p>&copy; 2026 Pizza Raúl Delivery • Miraflores, Lima - Perú</p>
+    </footer>
+</body>
+</html>
